@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YouTube to MP3 Converter</title>
+  </head>
+  <body>
+    <header>
+      <h1>YouTube to MP3 Converter</h1>
+      <p>By Neal Pandit</p>
+    </header>
+    <main>
+      <p>Enter the URL of the YouTube video you want to convert:</p>
+      <div>
+        <input type="text" id="urlInput" placeholder="Enter video URL">
+        <button onclick="convertToMP3()">Convert to MP3</button>
+      </div>
+      <div>
+        <img id="thumbnail" src="" alt="Video thumbnail">
+      </div>
+      <p id="status"></p>
+      <a id="downloadLink" href="" download>Download MP3 file</a>
+    </main>
+    <footer>
+      <p>© 2023 Neal Pandit. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function convertToMP3() {
+        const urlInput = document.getElementById('urlInput');
+        const thumbnail = document.getElementById('thumbnail');
+        const status = document.getElementById('status');
+        const downloadLink = document.getElementById('downloadLink');
+
+        const videoId = getVideoId(urlInput.value);
+        if (!videoId) {
+          status.innerText = 'Invalid video URL';
+          return;
+        }
+
+        status.innerText = 'Converting video to MP3...';
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `http://localhost:3000/convert?videoId=${videoId}`);
+        xhr.send();
+
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              status.innerText = 'Conversion complete';
+              downloadLink.href = `http://localhost:3000/download?videoId=${videoId}`;
+              downloadLink.style.display = 'block';
+            } else {
+              status.innerText = 'Error converting video';
+            }
+          }
+        }
+
+        // Get the video information from the YouTube Data API
+        const apiKey = 'YOUR_API_KEY';
+        const apiUrl = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&part=snippet&key=${apiKey}`;
+        fetch(apiUrl)
+          .then(response => response.json())
+          .then(data => {
+            if (data.items.length > 0) {
+              const thumbnailUrl = data.items[0].snippet.thumbnails.high.url;
+              thumbnail.src = thumbnailUrl;
+            }
+          })
+          .catch(error => console.error(error));
+      }
+
+      function getVideoId(url) {
+        const match = url.match(/(?:youtube.com\/watch\?v=|youtu.be\/)([\w-]+)/);
+        return match ? match[1] : null;
+      }
+    </script>
+  </body>
+</html>
