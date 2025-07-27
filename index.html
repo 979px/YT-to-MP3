@@ -3,39 +3,199 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nepsky | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Neal Pandit • Cybersecurity Professional</title>
+
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
+  <!-- Inline “dark-cyber” styling -->
+  <style>
+    :root {
+      --bg: #1e1e2f;
+      --fg: #cdd6f4;
+      --accent: #89b4fa;
+      --highlight: #94e2d5;
+      --border: #313244;
+      --font-base: 'Segoe UI', sans-serif;
+      --font-mono: 'Source Code Pro', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-base);
+      line-height: 1.6;
+      padding: 1rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    header .logo {
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+
+    header .tagline {
+      color: var(--highlight);
+      font-style: italic;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      background: rgba(40, 42, 54, 0.5);
+    }
+
+    h2 {
+      font-family: var(--font-mono);
+      color: var(--accent);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+    h2 .icon {
+      margin-right: 0.5rem;
+      color: var(--highlight);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    a {
+      color: var(--highlight);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      color: var(--highlight);
+    }
+  </style>
 </head>
+
 <body>
   <header>
-    <h1>Nepsky</h1>
-    <p>Cybersecurity Student • Encryption Explorer • Threat Hunter</p>
+    <div class="logo">
+      <i class="fas fa-shield-alt"></i> Neal Pandit
+    </div>
+    <div class="tagline">
+      Cybersecurity Architect • Encryption Evangelist • Threat Hunter
+    </div>
   </header>
 
   <main>
     <section id="about">
-      <h2>About Me</h2>
-      <p>I’m Neal, a cybersecurity enthusiast pursuing my B.S. in Cybersecurity. I specialize in cryptography, vulnerability analysis, and threat intelligence.</p>
+      <h2>
+        <i class="fas fa-user-secret icon"></i> About Me
+      </h2>
+      <p>
+        I’m Neal, a cybersecurity professional with a B.S. in Cybersecurity. 
+        I blend cryptography, vulnerability analysis, and threat intelligence 
+        into robust security solutions.
+      </p>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h2>
+        <i class="fas fa-project-diagram icon"></i> Projects
+      </h2>
       <ul>
         <li>CVSS Scoring & Vulnerability Prioritization Tool</li>
-        <li>Threat Hunting Dashboard using IoCs & TTPs</li>
-        <li>AES + SHA-256 Encryption Demo</li>
+        <li>Threat Hunting Dashboard with IoCs & TTPs</li>
+        <li>AES + SHA-256 Encryption Demo App</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>
+        <i class="fas fa-tools icon"></i> Technical Skills
+      </h2>
+      <ul>
+        <li>Networking: TCP/IP, BGP, OSPF, EIGRP, IPsec</li>
+        <li>Firewall Config: Cisco ASA/ASR, Juniper SRX, Palo Alto</li>
+        <li>Cloud Platforms: Azure & AWS</li>
+        <li>Tools: Wireshark, VMWare, Kusto, Terraform, VS Code</li>
+        <li>Infra as Code: PowerShell, Bash, Azure CLI, Terraform</li>
+        <li>Operating Systems: Windows, macOS, Linux</li>
+      </ul>
+    </section>
+
+    <section id="certifications">
+      <h2>
+        <i class="fas fa-certificate icon"></i> Certifications
+      </h2>
+      <ul>
+        <li>Azure Network Engineer (AZ-700)</li>
+        <li>Azure Administrator (AZ-104)</li>
+        <li>AWS Solutions Architect – Associate (SAA-C03)</li>
+        <li>Cisco CCNA</li>
+        <li>Certified Kubernetes Administrator (CKA)</li>
+        <li>Terraform Engineer – Associate</li>
       </ul>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: neapan@proton.me</p>
-      <p>GitHub: <a href="https://github.com/neapan" target="_blank">github.com/YOURUSERNAME</a></p>
+      <h2>
+        <i class="fas fa-envelope icon"></i> Contact
+      </h2>
+      <p>Email: <a href="mailto:np.neal@outlook.com">np.neal@outlook.com</a></p>
+      <p>GitHub: <a href="https://github.com/neapan" target="_blank">github.com/neapan</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/neapan" target="_blank">
+        linkedin.com/in/neapan</a>
+      </p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 NepSky.com</p>
+    &copy; 2025 Neal Pandit. All rights reserved.
   </footer>
 </body>
 </html>
