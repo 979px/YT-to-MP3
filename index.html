@@ -14,11 +14,11 @@
   <!-- Inline “dark-cyber” styling -->
   <style>
     :root {
-      --bg: #1e1e2f;
-      --fg: #cdd6f4;
-      --accent: #89b4fa;
-      --highlight: #94e2d5;
-      --border: #313244;
+      --bg: #1e1e1e;
+      --fg: #c0c0c0;
+      --accent: #0af;
+      --highlight: #0df;
+      --border: #333;
       --font-base: 'Segoe UI', sans-serif;
       --font-mono: 'Source Code Pro', monospace;
     }
@@ -46,15 +46,28 @@
       margin-bottom: 2rem;
     }
 
-    header .logo {
+    .logo {
       font-family: var(--font-mono);
       font-size: 1.8rem;
       color: var(--accent);
     }
 
-    header .tagline {
+    .tagline {
       color: var(--highlight);
       font-style: italic;
+      flex: 1;
+      text-align: center;
+    }
+
+    .social-links a {
+      color: var(--highlight);
+      margin-left: 1rem;
+      font-size: 1.4rem;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
     }
 
     main {
@@ -67,7 +80,7 @@
       border-radius: 8px;
       padding: 1.5rem;
       margin-bottom: 2rem;
-      background: rgba(40, 42, 54, 0.5);
+      background: rgba(40, 42, 54, 0.6);
     }
 
     h2 {
@@ -127,40 +140,42 @@
       <i class="fas fa-shield-alt"></i> Neal Pandit
     </div>
     <div class="tagline">
-      Cybersecurity Architect • Encryption Evangelist • Threat Hunter
+      Cybersecurity Practitioner • Cloud Evangelist • Threat Hunter
+    </div>
+    <div class="social-links">
+      <a href="https://github.com/neapan" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/neapan" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
     </div>
   </header>
 
   <main>
     <section id="about">
-      <h2>
-        <i class="fas fa-user-secret icon"></i> About Me
-      </h2>
+      <h2><i class="fas fa-user-secret icon"></i> About Me</h2>
       <p>
-        I’m Neal, a cybersecurity professional with a B.S. in Cybersecurity. 
+        I’m Neal, a cybersecurity practitioner. 
         I blend cryptography, vulnerability analysis, and threat intelligence 
         into robust security solutions.
       </p>
     </section>
 
     <section id="projects">
-      <h2>
-        <i class="fas fa-project-diagram icon"></i> Projects
-      </h2>
+      <h2><i class="fas fa-project-diagram icon"></i> Projects</h2>
       <ul>
         <li>CVSS Scoring & Vulnerability Prioritization Tool</li>
         <li>Threat Hunting Dashboard with IoCs & TTPs</li>
-        <li>AES + SHA-256 Encryption Demo App</li>
+        <li>AES + SHA-256 Encryption Demo App for Synology NAS</li>
       </ul>
     </section>
 
     <section id="skills">
-      <h2>
-        <i class="fas fa-tools icon"></i> Technical Skills
-      </h2>
+      <h2><i class="fas fa-tools icon"></i> Technical Skills</h2>
       <ul>
         <li>Networking: TCP/IP, BGP, OSPF, EIGRP, IPsec</li>
-        <li>Firewall Config: Cisco ASA/ASR, Juniper SRX, Palo Alto</li>
+        <li>Firewall Config: Cisco ASA/ASR, Juniper SRX, Palo Alto NGFW</li>
         <li>Cloud Platforms: Azure & AWS</li>
         <li>Tools: Wireshark, VMWare, Kusto, Terraform, VS Code</li>
         <li>Infra as Code: PowerShell, Bash, Azure CLI, Terraform</li>
@@ -169,27 +184,30 @@
     </section>
 
     <section id="certifications">
-      <h2>
-        <i class="fas fa-certificate icon"></i> Certifications
-      </h2>
+      <h2><i class="fas fa-certificate icon"></i> Certifications</h2>
       <ul>
+        <li>CompTIA A+ Core 1 & Core 2</li>
+        <li>Linux Essentials (LPI)</li>
+        <li>ITIL v4</li>
         <li>Azure Network Engineer (AZ-700)</li>
         <li>Azure Administrator (AZ-104)</li>
         <li>AWS Solutions Architect – Associate (SAA-C03)</li>
-        <li>Cisco CCNA</li>
+        <li>Cisco CCENT & CCNA</li>
         <li>Certified Kubernetes Administrator (CKA)</li>
         <li>Terraform Engineer – Associate</li>
       </ul>
     </section>
 
     <section id="contact">
-      <h2>
-        <i class="fas fa-envelope icon"></i> Contact
-      </h2>
-      <p>Email: <a href="mailto:np.neal@outlook.com">np.neal@outlook.com</a></p>
-      <p>GitHub: <a href="https://github.com/neapan" target="_blank">github.com/neapan</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/neapan" target="_blank">
-        linkedin.com/in/neapan</a>
+      <h2><i class="fas fa-envelope icon"></i> Contact</h2>
+      <p>Email: <a href="mailto:neapan@proton.me">neapan@proton.me</a></p>
+      <p>
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/neapan" target="_blank">github.com/neapan</a>
+      </p>
+      <p>
+        <i class="fab fa-linkedin"></i>
+        <a href="https://linkedin.com/in/neapan" target="_blank">linkedin.com/in/neapan</a>
       </p>
     </section>
   </main>
