@@ -3,15 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Neal Pandit • Cybersecurity Professional</title>
-
-  <!-- Font Awesome for icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-
-  <!-- Inline “dark-cyber” styling -->
+  <title>Neal Pandit • Cloud & Cybersecurity Engineer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     :root {
       --bg: #1e1e1e;
@@ -22,13 +15,7 @@
       --font-base: 'Segoe UI', sans-serif;
       --font-mono: 'Source Code Pro', monospace;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background: var(--bg);
       color: var(--fg);
@@ -36,7 +23,6 @@
       line-height: 1.6;
       padding: 1rem;
     }
-
     header {
       display: flex;
       align-items: center;
@@ -45,36 +31,28 @@
       padding-bottom: 1rem;
       margin-bottom: 2rem;
     }
-
     .logo {
       font-family: var(--font-mono);
       font-size: 1.8rem;
       color: var(--accent);
     }
-
     .tagline {
       color: var(--highlight);
       font-style: italic;
       flex: 1;
       text-align: center;
     }
-
     .social-links a {
       color: var(--highlight);
       margin-left: 1rem;
       font-size: 1.4rem;
       transition: color 0.2s ease-in-out;
     }
-
-    .social-links a:hover {
-      color: var(--accent);
-    }
-
+    .social-links a:hover { color: var(--accent); }
     main {
       max-width: 900px;
       margin: 0 auto;
     }
-
     section {
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -82,7 +60,6 @@
       margin-bottom: 2rem;
       background: rgba(40, 42, 54, 0.6);
     }
-
     h2 {
       font-family: var(--font-mono);
       color: var(--accent);
@@ -91,45 +68,44 @@
       display: flex;
       align-items: center;
     }
-
     h2 .icon {
       margin-right: 0.5rem;
       color: var(--highlight);
     }
-
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
-
+    ul { list-style: none; padding-left: 1rem; }
     li {
       position: relative;
       padding-left: 1.5rem;
       margin-bottom: 0.75rem;
     }
-
     li::before {
       content: '▹';
       position: absolute;
       left: 0;
       color: var(--accent);
     }
-
     a {
       color: var(--highlight);
       text-decoration: none;
     }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
+    a:hover { text-decoration: underline; }
     footer {
       text-align: center;
       padding: 1rem 0;
       border-top: 1px solid var(--border);
       font-size: 0.9rem;
       color: var(--highlight);
+    }
+    .badge-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .badge-grid img {
+      width: 120px;
+      height: 120px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
     }
   </style>
 </head>
@@ -140,15 +116,11 @@
       <i class="fas fa-shield-alt"></i> Neal Pandit
     </div>
     <div class="tagline">
-      Cybersecurity Practitioner • Cloud Evangelist • Threat Hunter
+      Cloud Infrastructure • Azure Networking • Cybersecurity Engineering
     </div>
     <div class="social-links">
-      <a href="https://github.com/neapan" target="_blank" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://linkedin.com/in/neapan" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
+      <a href="https://github.com/neapan" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/neapan" target="_blank"><i class="fab fa-linkedin"></i></a>
     </div>
   </header>
 
@@ -156,15 +128,17 @@
     <section id="about">
       <h2><i class="fas fa-user-secret icon"></i> About Me</h2>
       <p>
-        I’m Neal, a cybersecurity practitioner. 
-        I blend cryptography, vulnerability analysis, and threat intelligence 
-        into robust security solutions.
+        I’m Neal, a cloud and cybersecurity engineer with 8+ years of experience in network operations, Azure infrastructure, and technical support. I recently completed a Bachelor of Science in Cybersecurity and Information Assurance, gaining hands-on experience in threat modeling, incident response, and cloud security architecture.
+        <br /><br />
+        I specialize in solving complex networking issues, automating infrastructure with Terraform and Azure DevOps, and designing secure cloud environments using Microsoft Defender for Cloud. I’m passionate about building resilient systems that balance performance, security, and scalability.
       </p>
     </section>
 
     <section id="projects">
       <h2><i class="fas fa-project-diagram icon"></i> Projects</h2>
       <ul>
+        <li>Secure Azure Architecture Capstone – RBAC, NSGs, Defender for Cloud</li>
+        <li>Incident Response Simulation Lab – Splunk, MITRE ATT&CK</li>
         <li>CVSS Scoring & Vulnerability Prioritization Tool</li>
         <li>Threat Hunting Dashboard with IoCs & TTPs</li>
         <li>AES + SHA-256 Encryption Demo App for Synology NAS</li>
@@ -177,8 +151,10 @@
         <li>Networking: TCP/IP, BGP, OSPF, EIGRP, IPsec</li>
         <li>Firewall Config: Cisco ASA/ASR, Juniper SRX, Palo Alto NGFW</li>
         <li>Cloud Platforms: Azure & AWS</li>
-        <li>Tools: Wireshark, VMWare, Kusto, Terraform, VS Code</li>
-        <li>Infra as Code: PowerShell, Bash, Azure CLI, Terraform</li>
+        <li>Security Tools: Defender for Cloud, Sentinel, Splunk, MITRE ATT&CK</li>
+        <li>Security Concepts: RBAC, MFA, SIEM, Threat Modeling, Vulnerability Management</li>
+        <li>Infra as Code: PowerShell, Bash, Azure CLI, Terraform, Azure DevOps</li>
+        <li>Tools: Wireshark, VMWare, Kusto, VS Code</li>
         <li>Operating Systems: Windows, macOS, Linux</li>
       </ul>
     </section>
@@ -186,37 +162,37 @@
     <section id="certifications">
       <h2><i class="fas fa-certificate icon"></i> Certifications</h2>
       <ul>
+        <li>Systems Security Certified Practitioner (SSCP)</li>
+        <li>CompTIA Cybersecurity Analyst (CySA+)</li>
+        <li>CompTIA PenTest+ (PT0-003)</li>
         <li>CompTIA A+ Core 1 & Core 2</li>
-        <li>CompTIA CyberSecurity+ (CySA+)</li>
-        <li>Linux Essentials (LPI)</li>
-        <li>ITIL v4 Foundation</li>
+        <li>Microsoft Azure Administrator (AZ-104)</li>
         <li>Azure Network Engineer (AZ-700)</li>
-        <li>Azure Administrator (AZ-104)</li>
         <li>AWS Solutions Architect – Associate (SAA-C03)</li>
-        <li>Cisco CCENT & CCNA</li>
+        <li>Cisco CCNA</li>
+        <li>LPI Linux Essentials</li>
         <li>Certified Kubernetes Administrator (CKA)</li>
-        <li>Terraform Engineer – Associate</li>
+        <li>Terraform Associate</li>
+        <li>ITIL v4 Foundation</li>
       </ul>
     </section>
 
-    <section id="contact">
-      <h2><i class="fas fa-envelope icon"></i> Contact</h2>
-      <p>Email: <a href="mailto:neapan@proton.me">neapan[at]proton.me</a></p>
-      <p>
-        <i class="fab fa-github"></i>
-        <a href="https://github.com/neapan" target="_blank">github.com/neapan</a>
-      </p>
-      <p>
-        <i class="fab fa-linkedin"></i>
-        <a href="https://linkedin.com/in/neapan" target="_blank">linkedin.com/in/neapan</a>
-      </p>
+    <section id="badges">
+      <h2><i class="fas fa-award icon"></i> Digital Badges</h2>
+      <div class="badge-grid">
+        <a href="https://www.credly.com/badges/1f3e7b3e-sscp" target="_blank">
+          <img src="https://images.credly.com/size/340x340/images/1f3e7b3e-sscp.png" alt="SSCP Badge">
+        </a>
+        <a href="https://www.credly.com/badges/2a4c9c9a-cysa" target="_blank">
+          <img src="https://images.credly.com/size/340x340/images/2a4c9c9a-cysa.png" alt="CySA+ Badge">
+        </a>
+        <a href="https://www.credly.com/badges/3b5d8d8b-pentest" target="_blank">
+          <img src="https://images.credly.com/size/340x340/images/3b5d8d8b-pentest.png" alt="PenTest+ Badge">
+        </a>
+        <!-- Add more badges as needed -->
+      </div>
     </section>
-  </main>
 
-  <footer>
-    &copy; 2025 Neal Pandit. All rights reserved.
-  </footer>
-</body>
-</html>
-
-
+    <section id="blog">
+      <h2><i class="fas fa-blog icon"></i> Blog & Insights</h2>
+      <
