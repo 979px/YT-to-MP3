@@ -58,12 +58,12 @@
     -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
     mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
   }
-
+ 
   a{color:var(--accent-2);text-decoration:none;transition:color .2s}
   a:hover{color:var(--accent)}
-
+ 
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
-
+ 
   /* ---------- NAV ---------- */
   nav{
     position:sticky;top:0;z-index:50;
@@ -83,7 +83,7 @@
   .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:width .25s}
   .nav-links a:hover::after{width:100%}
   @media(max-width:680px){.nav-links{display:none}}
-
+ 
   /* ---------- HERO ---------- */
   header.hero{padding:5.5rem 0 3.5rem}
   .eyebrow{
@@ -111,23 +111,60 @@
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(61,220,151,.5);color:#062014}
   .btn-ghost{border:1px solid var(--border-bright);color:var(--fg-bright)}
   .btn-ghost:hover{border-color:var(--accent-2);color:var(--fg-bright);transform:translateY(-2px)}
-
+ 
   .hero-stats{display:flex;flex-wrap:wrap;gap:2.4rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+ 
+  /* ---------- HERO WIDGET (terminal + network grid) ---------- */
+  .hud{
+    margin-top:2.6rem;display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;
+    border:1px solid var(--border-bright);border-radius:var(--radius);overflow:hidden;
+    background:linear-gradient(160deg,var(--panel),var(--bg-soft));
+  }
+  @media(max-width:760px){.hud{grid-template-columns:1fr}}
+  .hud-bar{
+    grid-column:1 / -1;display:flex;align-items:center;gap:.6rem;
+    padding:.6rem .9rem;border-bottom:1px solid var(--border);
+    background:var(--panel-2);font-family:var(--mono);font-size:.72rem;color:var(--fg-dim);
+  }
+  .hud-bar .dots{display:flex;gap:.4rem;margin-right:.4rem}
+  .hud-bar .dots i{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .hud-bar .dots i:nth-child(1){background:#ff5f57}
+  .hud-bar .dots i:nth-child(2){background:#febc2e}
+  .hud-bar .dots i:nth-child(3){background:#28c840}
+  .hud-bar .live{margin-left:auto;display:flex;align-items:center;gap:.45rem;color:var(--accent)}
+  .hud-bar .live .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(61,220,151,.6);animation:pulse 2.2s infinite}
+ 
+  .term{padding:1.1rem 1.2rem;font-family:var(--mono);font-size:.82rem;line-height:1.85;min-height:230px}
+  .term .line{white-space:pre-wrap;word-break:break-word}
+  .term .pr{color:var(--accent)}
+  .term .cm{color:var(--fg-bright)}
+  .term .ok{color:var(--accent)}
+  .term .info{color:var(--accent-2)}
+  .term .warnc{color:var(--warn)}
+  .term .dim{color:var(--fg-dim)}
+  .term .cursor{display:inline-block;width:8px;height:1.05em;background:var(--accent);vertical-align:-2px;animation:blink 1.05s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+ 
+  .net{position:relative;border-left:1px solid var(--border);min-height:230px;background:
+    radial-gradient(420px 200px at 70% 30%, rgba(57,186,230,.07), transparent 70%)}
+  @media(max-width:760px){.net{border-left:none;border-top:1px solid var(--border);min-height:190px}}
+  .net svg{position:absolute;inset:0;width:100%;height:100%}
+  .net .label{position:absolute;bottom:.7rem;left:.9rem;font-family:var(--mono);font-size:.68rem;color:var(--fg-dim);letter-spacing:.08em;text-transform:uppercase}
   .stat .num{font-family:var(--display);font-weight:700;font-size:1.9rem;color:var(--fg-bright)}
   .stat .num span{color:var(--accent)}
   .stat .label{font-family:var(--mono);font-size:.74rem;color:var(--fg-dim);letter-spacing:.05em;text-transform:uppercase}
-
+ 
   /* ---------- SECTIONS ---------- */
   section.block{padding:3.2rem 0}
   .sec-head{display:flex;align-items:baseline;gap:.8rem;margin-bottom:1.8rem}
   .sec-num{font-family:var(--mono);font-size:.85rem;color:var(--accent)}
   .sec-title{font-family:var(--display);font-weight:600;font-size:1.7rem;color:var(--fg-bright);letter-spacing:-.02em}
   .sec-rule{flex:1;height:1px;background:linear-gradient(90deg,var(--border-bright),transparent)}
-
+ 
   .prose p{max-width:70ch;margin-bottom:1rem}
   .prose p:last-child{margin-bottom:0}
   .prose strong{color:var(--fg-bright);font-weight:600}
-
+ 
   /* cards */
   .card{
     background:linear-gradient(160deg,var(--panel),var(--bg-soft));
@@ -135,7 +172,7 @@
     padding:1.5rem;transition:border-color .25s,transform .25s,box-shadow .25s;
   }
   .card:hover{border-color:var(--border-bright);transform:translateY(-3px);box-shadow:0 14px 40px -18px rgba(0,0,0,.7)}
-
+ 
   /* projects */
   .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem}
   .proj h3{font-family:var(--display);font-size:1.12rem;color:var(--fg-bright);margin-bottom:.5rem;display:flex;align-items:center;gap:.55rem;letter-spacing:-.01em}
@@ -143,7 +180,7 @@
   .proj p{font-size:.92rem;color:var(--fg-dim);margin-bottom:.9rem}
   .tags{display:flex;flex-wrap:wrap;gap:.4rem}
   .tag{font-family:var(--mono);font-size:.7rem;padding:.22rem .55rem;border-radius:6px;background:var(--panel-2);border:1px solid var(--border);color:var(--accent)}
-
+ 
   /* skills */
   .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.1rem}
   .skill-cat .skill-head{font-family:var(--mono);font-size:.82rem;color:var(--accent-2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:.85rem;display:flex;align-items:center;gap:.5rem}
@@ -151,7 +188,7 @@
   .chips{display:flex;flex-wrap:wrap;gap:.45rem}
   .chip{font-family:var(--mono);font-size:.78rem;padding:.32rem .62rem;border-radius:7px;background:var(--panel-2);border:1px solid var(--border);color:var(--fg);transition:border-color .2s,color .2s}
   .chip:hover{border-color:var(--accent);color:var(--fg-bright)}
-
+ 
   /* certs */
   .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:.8rem}
   .cert{display:flex;align-items:flex-start;gap:.75rem;padding:.95rem 1.05rem;background:var(--panel);border:1px solid var(--border);border-radius:10px;transition:border-color .2s,background .2s}
@@ -160,7 +197,7 @@
   .cert .c-name{font-size:.9rem;color:var(--fg-bright);font-weight:500;line-height:1.4}
   .cert .c-issuer{font-family:var(--mono);font-size:.72rem;color:var(--fg-dim)}
   .cert.ip .c-name::after{content:"in progress";font-family:var(--mono);font-size:.62rem;color:var(--warn);background:rgba(255,180,84,.1);border:1px solid rgba(255,180,84,.3);padding:.1rem .4rem;border-radius:5px;margin-left:.5rem;vertical-align:middle;text-transform:uppercase;letter-spacing:.05em}
-
+ 
   /* education timeline */
   .timeline{position:relative;padding-left:1.6rem}
   .timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--accent-2),transparent)}
@@ -169,14 +206,14 @@
   .edu::before{content:"";position:absolute;left:-1.6rem;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);transform:translateX(1px)}
   .edu .deg{font-family:var(--display);font-weight:600;color:var(--fg-bright);font-size:1.02rem}
   .edu .school{font-size:.9rem;color:var(--fg-dim)}
-
+ 
   /* blog */
   .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.1rem}
   .post .p-meta{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);margin-bottom:.6rem}
   .post h3{font-family:var(--display);font-size:1.08rem;color:var(--fg-bright);margin-bottom:.5rem;line-height:1.3}
   .post p{font-size:.9rem;color:var(--fg-dim)}
   .post .read{font-family:var(--mono);font-size:.78rem;color:var(--accent);margin-top:.9rem;display:inline-flex;align-items:center;gap:.4rem}
-
+ 
   /* contact */
   .contact-card{text-align:center;padding:3rem 1.5rem;background:linear-gradient(160deg,var(--panel-2),var(--bg-soft));border:1px solid var(--border-bright);border-radius:18px}
   .contact-card h2{font-family:var(--display);font-size:1.9rem;color:var(--fg-bright);margin-bottom:.7rem;letter-spacing:-.02em}
@@ -184,9 +221,9 @@
   .socials{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
   .soc{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:11px;border:1px solid var(--border-bright);color:var(--fg-bright);font-size:1.2rem;transition:transform .15s,border-color .2s,color .2s,background .2s}
   .soc:hover{transform:translateY(-3px);border-color:var(--accent);color:var(--accent);background:var(--panel)}
-
+ 
   footer{border-top:1px solid var(--border);padding:1.8rem 0;text-align:center;font-family:var(--mono);font-size:.78rem;color:var(--fg-dim)}
-
+ 
   /* reveal animation */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1;transform:none}
@@ -194,7 +231,7 @@
 </style>
 </head>
 <body>
-
+ 
 <nav>
   <div class="nav-inner">
     <div class="brand"><i class="fas fa-shield-halved" style="color:var(--accent)"></i>neal_pandit<span class="dot">.</span></div>
@@ -208,9 +245,9 @@
     </div>
   </div>
 </nav>
-
+ 
 <div class="wrap">
-
+ 
   <!-- HERO -->
   <header class="hero">
     <div class="eyebrow reveal"><span class="pulse"></span> Available for security &amp; cloud roles</div>
@@ -227,8 +264,21 @@
       <div class="stat"><div class="num">15<span>+</span></div><div class="label">Certifications</div></div>
       <div class="stat"><div class="num">Azure<span>·</span>AWS</div><div class="label">Cloud platforms</div></div>
     </div>
+ 
+    <div class="hud reveal">
+      <div class="hud-bar">
+        <span class="dots"><i></i><i></i><i></i></span>
+        ~/ops/netsec — monitor
+        <span class="live"><span class="pulse"></span> LIVE</span>
+      </div>
+      <div class="term" id="term" aria-hidden="true"></div>
+      <div class="net">
+        <svg id="netsvg" viewBox="0 0 320 240" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+        <div class="label">datacenter · packet flow</div>
+      </div>
+    </div>
   </header>
-
+ 
   <!-- ABOUT -->
   <section class="block" id="about">
     <div class="sec-head reveal"><span class="sec-num">01</span><span class="sec-title">About</span><span class="sec-rule"></span></div>
@@ -237,7 +287,7 @@
       <p>I'm drawn to the security space because it rewards curiosity and discipline in equal measure. Whether it's tightening access with <strong>RBAC and MFA</strong>, hunting threats with <strong>Sentinel and Splunk</strong>, or codifying infrastructure with <strong>Terraform</strong>, I care about systems that are resilient by design — not bolted on after the fact. I hold both a <strong>BS and MS in Cybersecurity</strong>, and I'm always looking for the next hard problem.</p>
     </div>
   </section>
-
+ 
   <!-- PROJECTS -->
   <section class="block" id="projects">
     <div class="sec-head reveal"><span class="sec-num">02</span><span class="sec-title">Projects</span><span class="sec-rule"></span></div>
@@ -269,7 +319,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- SKILLS -->
   <section class="block" id="skills">
     <div class="sec-head reveal"><span class="sec-num">03</span><span class="sec-title">Technical Skills</span><span class="sec-rule"></span></div>
@@ -308,7 +358,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- CERTIFICATIONS -->
   <section class="block" id="certs">
     <div class="sec-head reveal"><span class="sec-num">04</span><span class="sec-title">Certifications</span><span class="sec-rule"></span></div>
@@ -329,7 +379,7 @@
       <div class="cert reveal"><i class="fas fa-certificate"></i><div><div class="c-name">ITIL v4 Foundation</div><div class="c-issuer">Axelos</div></div></div>
     </div>
   </section>
-
+ 
   <!-- EDUCATION -->
   <section class="block" id="education">
     <div class="sec-head reveal"><span class="sec-num">05</span><span class="sec-title">Education</span><span class="sec-rule"></span></div>
@@ -337,12 +387,11 @@
       <div class="timeline">
         <div class="edu"><div class="deg">M.S. Cybersecurity &amp; Information Assurance</div><div class="school">Western Governors University · Salt Lake City, UT</div></div>
         <div class="edu"><div class="deg">B.S. Cybersecurity &amp; Information Assurance</div><div class="school">Western Governors University · Salt Lake City, UT</div></div>
-        <div class="edu"><div class="deg">A.A.S. Electrical Engineering Technology</div><div class="school">ITT Technical Institute · Arlington, TX</div></div>
         <div class="edu"><div class="deg">B.Eng. Electronics &amp; Communication Engineering</div><div class="school">Tribhuvan University · Nepal</div></div>
       </div>
     </div>
   </section>
-
+ 
   <!-- BLOG -->
   <section class="block" id="blog">
     <div class="sec-head reveal"><span class="sec-num">06</span><span class="sec-title">Blog &amp; Insights</span><span class="sec-rule"></span></div>
@@ -367,7 +416,7 @@
       </div>
     </div>
   </section>
-
+ 
   <!-- CONTACT -->
   <section class="block" id="contact">
     <div class="contact-card reveal">
@@ -380,15 +429,117 @@
       </div>
     </div>
   </section>
-
+ 
 </div>
-
+ 
 <footer>
   &copy; Neal Pandit · 2015–2026 · Built with curiosity and caffeine.
 </footer>
-
+ 
 <script>
-  const io=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+/* ---- network grid: nodes + flowing packets ---- */
+(function(){
+  const svg=document.getElementById('netsvg');
+  if(!svg)return;
+  const NS='http://www.w3.org/2000/svg';
+  const W=320,H=240;
+  const nodes=[
+    {x:60,y:60},{x:160,y:40},{x:260,y:70},
+    {x:40,y:150},{x:160,y:130},{x:280,y:160},
+    {x:90,y:210},{x:210,y:205}
+  ];
+  const edges=[[0,1],[1,2],[0,3],[1,4],[2,5],[3,4],[4,5],[3,6],[4,7],[6,7],[5,7],[0,4]];
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ 
+  edges.forEach(([a,b])=>{
+    const l=document.createElementNS(NS,'line');
+    l.setAttribute('x1',nodes[a].x);l.setAttribute('y1',nodes[a].y);
+    l.setAttribute('x2',nodes[b].x);l.setAttribute('y2',nodes[b].y);
+    l.setAttribute('stroke','#2a3447');l.setAttribute('stroke-width','1');
+    svg.appendChild(l);
+  });
+  nodes.forEach((n,i)=>{
+    const c=document.createElementNS(NS,'circle');
+    c.setAttribute('cx',n.x);c.setAttribute('cy',n.y);c.setAttribute('r',i===4?5:3.5);
+    c.setAttribute('fill',i===4?'#3ddc97':'#39bae6');
+    c.setAttribute('opacity','.9');
+    if(!reduce){
+      const a=document.createElementNS(NS,'animate');
+      a.setAttribute('attributeName','opacity');
+      a.setAttribute('values','.5;1;.5');
+      a.setAttribute('dur',(2.4+Math.random()*1.8).toFixed(2)+'s');
+      a.setAttribute('repeatCount','indefinite');
+      c.appendChild(a);
+    }
+    svg.appendChild(c);
+  });
+ 
+  if(!reduce){
+    function packet(){
+      const [a,b]=edges[Math.floor(Math.random()*edges.length)];
+      const from=Math.random()<.5?a:b, to=from===a?b:a;
+      const p=document.createElementNS(NS,'circle');
+      p.setAttribute('r','2.4');p.setAttribute('fill','#3ddc97');
+      svg.appendChild(p);
+      const dur=900+Math.random()*700, t0=performance.now();
+      (function step(t){
+        const k=Math.min(1,(t-t0)/dur);
+        p.setAttribute('cx',nodes[from].x+(nodes[to].x-nodes[from].x)*k);
+        p.setAttribute('cy',nodes[from].y+(nodes[to].y-nodes[from].y)*k);
+        p.setAttribute('opacity',(1-Math.abs(k-.5)*1.2).toFixed(2));
+        if(k<1)requestAnimationFrame(step);else p.remove();
+      })(t0);
+    }
+    setInterval(packet,520);
+  }
+})();
+ 
+/* ---- terminal: types realistic netsec logs, loops ---- */
+(function(){
+  const el=document.getElementById('term');
+  if(!el)return;
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const seq=[
+    {c:'pr',t:'neal@core:~$ '},{c:'cm',t:'netscan --subnet 10.0.0.0/24',nl:1},
+    {c:'dim',t:'scanning 254 hosts ............ ',d:1},{c:'ok',t:'done',nl:1},
+    {c:'info',t:'→ 18 hosts up · 0 unexpected open ports',nl:2},
+    {c:'pr',t:'neal@core:~$ '},{c:'cm',t:'siem query --rule mitre.T1110',nl:1},
+    {c:'warnc',t:'! 2 brute-force attempts blocked',nl:1},
+    {c:'info',t:'→ source quarantined · alert sent',nl:2}
+  ];
+  function render(state){
+    let html='';
+    state.done.forEach(s=>{html+=`<span class="${s.c}">${s.t}</span>`+'<br>'.repeat(s.nl||0);});
+    if(state.cur){html+=`<span class="${state.cur.c}">${state.cur.text}</span>`;}
+    html+='<span class="cursor"></span>';
+    el.innerHTML=`<div class="line">${html}</div>`;
+  }
+  if(reduce){ // static fallback
+    el.innerHTML='<div class="line">'+seq.map(s=>`<span class="${s.c}">${s.t}</span>`+'<br>'.repeat(s.nl||0)).join('')+'</div>';
+    return;
+  }
+  let i=0,done=[];
+  function typeNext(){
+    if(i>=seq.length){ // loop: brief pause, clear, restart
+      setTimeout(()=>{done=[];i=0;render({done});typeNext();},1700);
+      return;
+    }
+    const s=seq[i], full=s.t; let j=0;
+    const speed=s.c==='cm'?34:s.c==='pr'?12:7;
+    (function tick(){
+      const text=full.slice(0,j);
+      render({done,cur:{c:s.c,text}});
+      if(j<full.length){j++;setTimeout(tick,speed+Math.random()*22);}
+      else{done.push(s);i++;setTimeout(typeNext, s.d?620:(s.nl?260:90));}
+    })();
+  }
+  // start when widget scrolls into view
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){typeNext();io.disconnect();}});},{threshold:.3});
+  io.observe(el);
+})();
+</script>
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%6,5)*60)+'ms';io.observe(el)});
 </script>
 </body>
